@@ -135,7 +135,7 @@ export default function Messenger({ visible, contactos, user }) {
     <Grid container direction="row" justifyContent="center" alignItems="start">
       <Grid xs item={true}>
         <Container
-          sx={{ maxHeight: "670px", overflow: "hidden", height: "650px" }}
+          sx={{ maxHeight: "90vh", overflow: "hidden", height: "90vh" }}
         >
           <MessagesList conversations={conversations} user={user} />
         </Container>
@@ -147,7 +147,7 @@ export default function Messenger({ visible, contactos, user }) {
       </Grid>
       <Grid xs item={true}>
         <Container
-          sx={{ maxHeight: "670px", overflow: "hidden", height: "650px" }}
+          sx={{ maxHeight: "90vh", overflow: "hidden", height: "90vh" }}
         >
           <FriendList online={online} offline={offline} />
         </Container>
