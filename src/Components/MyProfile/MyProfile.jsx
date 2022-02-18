@@ -40,26 +40,26 @@ const MyProfile = ({ myProfile }) => {
         }
       >
         <DivInfo>
-          <div style="
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    border: 5px solid rgb(238, 238, 238);
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-">
-          <img
-            className="card__image"
-            src={
-              myProfile.data[0].profile?.includes("http")
-              ? myProfile.data[0].profile
-              : process.env.REACT_APP_PUERTO + myProfile.data[0].profile
-            }
-            alt={myProfile.data[0].fullname}
+          <div style={{
+            width: '200px',
+            height: '200px',
+            margin: '0 auto',
+            border: '5px solid rgb(238, 238, 238)',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <img
+              className="card__image"
+              src={
+                myProfile.data[0].profile?.includes("http")
+                  ? myProfile.data[0].profile
+                  : process.env.REACT_APP_PUERTO + myProfile.data[0].profile
+              }
+              alt={myProfile.data[0].fullname}
             />
-            </div>
+          </div>
           <h2 className="card__fullname">{myProfile.data[0].fullname}</h2>
           <p className="card__email">{myProfile.data[0].email}</p>
           <p className="card__cohorte">
