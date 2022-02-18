@@ -41,7 +41,7 @@ export default function Likes({ setShowLikes, p }) {
                 className="likes__link"
               >
                 <span className="likes__span" />
-                <img src={p.profile} alt={p.fullname.split(" ")[0]} />
+                <img src={p.profile.includes('http')?p.profile:`${process.env.REACT_APP_PUERTO}${p.profile}`} alt={p.fullname.split(" ")[0]} />
                 <p>{p.fullname}</p>
                 <Experience />
               </Link>

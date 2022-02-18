@@ -73,11 +73,6 @@ export default function Messenger({ visible, contactos, user }) {
   }, [dispatch]);
 
   useEffect(() => {
-    // if(control.current === 0){
-    //     control.current = control.current + 1
-    //     return
-    // }
- 
     let Offline = [];
     gsock.current?.on("getUsers", (users) => {
       let online = [];
@@ -90,8 +85,7 @@ export default function Messenger({ visible, contactos, user }) {
             if (aux[i].userId === contactos[j].id) {
               online.push(contactos[j]);
               continue;
-            }
-
+            }else
             if (!aux.length || aux[i].userId !== contactos[j].id) {
               Offline.push(contactos[j]);
             }
