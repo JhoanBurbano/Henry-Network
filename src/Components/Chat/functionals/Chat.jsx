@@ -86,7 +86,7 @@ export default function Chat({ online }) {
           </Container>
         </>
       ) : (
-        <Container sx={{ height: "500px" }}>
+        <Container sx={{ height: "400px" }}>
           <p>No hay chats por mostrar</p>
         </Container>
       )}
