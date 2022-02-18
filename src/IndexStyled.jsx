@@ -60,7 +60,7 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 20px;
+        padding: 20px 20px 0 20px;
         position: relative;
         z-index: 1;
         background-color: var(--grey-2);
