@@ -15,14 +15,20 @@ const TypeBox = ({ socket }) => {
   const [msg, setmsg] = useState();
 
   const handleClick = ({ target: { value } }) => {
-    socket.current.emit("sendMessage", {
-      senderId: myId.id,
-      receiverId: friend.id,
-      text: msg
-    }) 
-  
-    NEW_MESSAGE({ conversationId: id, text: msg, sender: myId.id });
-    setmsg("");
+    if (value!=="") {
+      
+      socket.current.emit("sendMessage", {
+        senderId: myId.id,
+        receiverId: friend.id,
+        text: msg
+      }) 
+      
+      NEW_MESSAGE({ conversationId: id, text: msg, sender: myId.id });
+      setmsg("");
+    }else{
+      alert('No debes enviar mensajes vacios')
+
+    }
 
     //  dispatch(get_CONVERSATIONS())
   };
@@ -36,26 +42,27 @@ const TypeBox = ({ socket }) => {
 
    const handleKey=(e)=>{
 
-    if(e.key==='Enter'){
+    if(e.key==='Enter' && e.target.value!==""){
 
       socket.current.emit("sendMessage", {
          senderId: myId.id,
          receiverId: friend.id,
          text: msg
     }) 
+
       NEW_MESSAGE({conversationId:id, text: msg, sender:myId.id})
      
       setmsg("")
   
+     }
+     else {
+      alert('No debes enviar mensajes vacios')
      }
 }
 
 
   return (
     <>
-   
-    
-    
       {
         id?
 
@@ -73,15 +80,6 @@ const TypeBox = ({ socket }) => {
                 onChange={(evt) => handleChange(evt)}
                 minLength='1'
               />  
-
-
-        {/* <TextField 
-          id="filled-basic" 
-          onChange={({target:{value}})=>{setmsg(value)}} 
-          label="Type you message..." variant="filled" 
-          sx={{width:'80%', height:'520%'}} 
-           value={msg}
-        /> */}
 
           <ButtonSubmit
             onClick={(evt) => handleClick(evt)}
