@@ -41,8 +41,9 @@ export const FormAuthorize = () => {
           id="email"
           placeholder="email"
           onChange={handleInputChange}
+          required
         ></input>
-        <select onChange={handleChange}>
+        <select onChange={handleChange} required>
           <option>Cohorte</option>
           {cohorte.map((e) => (
             <option value={e.option}>{e.option}</option>
