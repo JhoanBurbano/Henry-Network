@@ -24,29 +24,13 @@ export default function Messenger({ visible, contactos, user }) {
 
   console.log(follows.data, "heee k2");
   console.log(contactos, "lo que llega de contactos");
-  // if(Socket.length !== 0){
-
-  //     gsock.current = Socket;
-  // }
 
   useEffect(() => {
-    // if (contr.current === 1 || contr.current === 0) {
-    //   contr.current = contr.current + 1;
-    //   return;
-    // }
-
     gsock.current = io(`${process.env.REACT_APP_PUERTO}`);
     gsock.current.emit("addUser", myId?.id);
     // socket.current.on("getUsers", users=>{console.log(users, 'usuarios conectados')})
     //dispatch(get_SOCKET(gsock.current))
   }, [dispatch, myId?.id]);
-
-  // useEffect(()=>{
-
-  //     gsock.current?.emit("addUser", myId?.id);
-  //     // socket.current.on("getUsers", users=>{console.log(users, 'usuarios conectados')})
-
-  // }, [visible])
 
   useEffect(() => {
     gsock.current?.on("getMessage", (data) => {
@@ -72,8 +56,10 @@ export default function Messenger({ visible, contactos, user }) {
     });
   }, [dispatch]);
 
+  let Offline = []
+
   useEffect(() => {
-    let Offline = [];
+    Offline = [];
     gsock.current?.on("getUsers", (users) => {
       let online = [];
       let aux = users.filter((e) => e.userId !== myId?.id);
@@ -86,7 +72,7 @@ export default function Messenger({ visible, contactos, user }) {
               online.push(contactos[j]);
               continue;
             }else
-            if (!aux.length || aux[i].userId !== contactos[j].id) {
+            if (aux[i].userId !== contactos[j].id) {
               Offline.push(contactos[j]);
             }
           }
@@ -107,7 +93,7 @@ export default function Messenger({ visible, contactos, user }) {
         setOffline(contactos)
     }
 
-  }, [contactos, myId?.id, offline.length]);
+  }, [gsock.current]);
 
   useEffect(() => {
     dispatch(user_ALL());
