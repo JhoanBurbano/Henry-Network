@@ -53,9 +53,8 @@ export default function CrearPost() {
   function submitHandler(e) {
     e.preventDefault();
     notify();
-    alert("Post creado exitosamente");
     let data = new FormData();
-
+    
     file.forEach((f) => {
       data.append("image", f);
     });
@@ -65,6 +64,7 @@ export default function CrearPost() {
     setInput({
       description: "",
     });
+    alert("Post creado exitosamente");
     window.location.reload();
   }
   const handleFile = async (e) => {
