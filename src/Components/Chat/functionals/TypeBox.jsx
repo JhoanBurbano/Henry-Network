@@ -55,7 +55,7 @@ const TypeBox = ({ socket }) => {
       setmsg("")
   
      }
-     else {
+     else if (e.key==='Enter'){
       alert('No debes enviar mensajes vacios')
      }
 }
