@@ -82,12 +82,7 @@ export const DivInfo = styled.div`
   width: 300px;
 
   .card__image {
-    width: 200px;
     height: 200px;
-    border: 5px solid #eee;
-    overflow: hidden;
-    border-radius: 50%;
-    cursor: pointer;
   }
 
   .card__fullname {
