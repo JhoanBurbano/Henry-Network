@@ -33,7 +33,6 @@ export default function Likes({ setShowLikes, p }) {
       <StyledLikes>
         <h3 className="layout__title">Marcado como me gusta por:</h3>
         {p?.likes?.map((p) => {
-          console.log(p);
           return (
             <div key={p.id} className="likes__div">
               <Link
