@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB_GVK0mQoTC0Zd7Rcf1PWJyduBdPWI7w4",
-  authDomain: "henry-network-b2190.firebaseapp.com",
-  projectId: "henry-network-b2190",
-  storageBucket: "henry-network-b2190.appspot.com",
-  messagingSenderId: "409241400460",
-  appId: "1:409241400460:web:59757b4d56658c265037a9",
-  measurementId: "G-HLJ71N6QMH"
+  apiKey: "AIzaSyDXYDTEYCqUKSj4jIS3nk9xPaDgEgkgSD8",
+  authDomain: "henry-network-8267b.firebaseapp.com",
+  projectId: "henry-network-8267b",
+  storageBucket: "henry-network-8267b.appspot.com",
+  messagingSenderId: "717190995829",
+  appId: "1:717190995829:web:658d1f0b2c2d100465fd3c",
+  measurementId: "G-6VVTHGRKVM"
 }
 
 const app = initializeApp(firebaseConfig);
