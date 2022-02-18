@@ -17,6 +17,7 @@ import { BlockAccount } from "./Components/Admin/BlockAccount/BlockAccount.jsx";
 import SocketPrivider from "./Components/Context/SocketPrivider";
 import { ProtectedRoute } from "./Components/ProtectedRoutes/ProtectedRoute.jsx";
 import { Authorize } from "./Components/Admin/Authorize/Authorize.jsx";
+import './App.css'
 
 function App() {
   return (
