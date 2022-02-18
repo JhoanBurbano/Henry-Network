@@ -30,8 +30,8 @@ export const FormAuthorize = () => {
       authorize,
       tokenUsuario()
     );
-    alert("se autorizo a " + input);
     dispatch(authorized());
+    alert("se autorizo a " + input);
   }
   return (
     <Form onSubmit={(e) => onSubmit(e)}>

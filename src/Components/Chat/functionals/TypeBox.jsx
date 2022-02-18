@@ -71,6 +71,7 @@ const TypeBox = ({ socket }) => {
                 name="message"
                 onKeyPress={handleKey}
                 onChange={(evt) => handleChange(evt)}
+                minLength='1'
               />  
 
 
